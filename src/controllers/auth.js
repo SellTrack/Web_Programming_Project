@@ -35,9 +35,7 @@ module.exports = {
 
                 if (user.isActive) {
 
-                    req.session.id = user.id
-                    req.session.password = user.password
-                    req.sessionOptions.maxAge = 1000 * 60 * 60 * 24 * 3
+                   
                 /* Cookie */
                 
                     /* SIMPLE TOKEN */
@@ -161,6 +159,9 @@ module.exports = {
             #swagger.summary = "simpleToken: Logout"
             #swagger.description = 'Delete token key.'
         */
+
+
+        
 
         const auth = req.headers?.authorization // Token ...tokenKey...
         const tokenKey = auth ? auth.split(' ') : null // ['Token', '...tokenKey...']
