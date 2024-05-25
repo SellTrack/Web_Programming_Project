@@ -37,7 +37,9 @@ module.exports = {
 
                    
                 /* Cookie */
-                
+                    req.session.id = user.id
+                    req.session.password = user.password
+                    req.sessionOptions.maxAge = 1000 * 60 * 60 * 24 * 3
                     /* SIMPLE TOKEN */
 
                     let tokenData = await Token.findOne({ userId: user.id })
@@ -160,7 +162,7 @@ module.exports = {
             #swagger.description = 'Delete token key.'
         */
 
-
+        req.session = null
         
 
         const auth = req.headers?.authorization // Token ...tokenKey...
