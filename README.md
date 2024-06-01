@@ -123,11 +123,7 @@ Copy the User id from the response and use it to view user information.
     }
     ```
 
-
-
-
-
-
+With this route you can try other get and post actions with inspecting code.
 
 
 
